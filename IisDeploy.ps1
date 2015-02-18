@@ -1,17 +1,29 @@
-navigate to inetsrv C windows system 32 inetsrv
-use appcmd.exe 
+$PathToAppCmdExe = "C:\Windows\System32\inetsrv"
+$AppCmdExeName = ".\appcmd.exe"
+$AppPoolName = "GavinAppPool"
+$SiteName = "GavinSite"
+$IdentityType = "LocalService"
+$RuntimeVersion = "v4.0"
+$HttpPort = 51130
+$SiteId = 50
+$PhysicalPathToWebSite = "C:\source\WebApp_Hub\WebApp"
 
-//Add app pool
-add appPool /name:"TestPool"
+#Add app pool
+& $PathToAppCmdExe$AppCmdExeName add appPool /name:$AppPoolName
 
-//change app Pool identityType
-set appPool "TestPool" /processModel.IdentityType:Localservice
+#change app Pool identityType
+& $PathToAppCmdExe$AppCmdExeName set appPool $AppPoolName /processModel.IdentityType:$identityType
+& $PathToAppCmdExe$AppCmdExeName set appPool $AppPoolName /managedRuntimeVersion:$RuntimeVersion
 
-//add site
-add site /name:"name" /id:y /bindings:http/*:51130: /physicalpath:"C:/...."
+#add site
+& $PathToAppCmdExe$AppCmdExeName add site /name:$SiteName /id:$SiteId /bindings:http/*:$HttpPort: /physicalpath:$PhysicalPathToWebSite
 
-//change sites app pool assignment
-set site "Test" /applicationDefaults.applicationPool:TestPool
+#change sites app pool assignment
+& $PathToAppCmdExe$AppCmdExeName set site $SiteName /applicationDefaults.applicationPool:$AppPoolName
+& $PathToAppCmdExe$AppCmdExeName set site $SiteName /+bindings.[protocol='http',bindingInformation='*:51130:']
+
+#start site
+& $PathToAppCmdExe$AppCmdExeName start site /site.name:$SiteName
 
 
 
