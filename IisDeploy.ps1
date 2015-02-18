@@ -16,7 +16,7 @@ $PhysicalPathToWebSite = "C:\source\WebApp_Hub\WebApp"
 & $PathToAppCmdExe$AppCmdExeName set appPool $AppPoolName /managedRuntimeVersion:$RuntimeVersion
 
 #add site
-& $PathToAppCmdExe$AppCmdExeName add site /name:$SiteName /id:$SiteId /bindings:$$HttpPort /physicalpath:$PhysicalPathToWebSite
+& $PathToAppCmdExe$AppCmdExeName add site /name:$SiteName /id:$SiteId /bindings:$HttpPort /physicalpath:$PhysicalPathToWebSite
 
 #change sites app pool assignment
 & $PathToAppCmdExe$AppCmdExeName set site $SiteName /applicationDefaults.applicationPool:$AppPoolName
