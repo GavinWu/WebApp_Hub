@@ -4,7 +4,7 @@ $AppPoolName = "GavinAppPool"
 $SiteName = "GavinSite"
 $IdentityType = "LocalService"
 $RuntimeVersion = "v4.0"
-$HttpPort = 51130
+$HttpPort = "51130"
 $SiteId = 50
 $PhysicalPathToWebSite = "C:\source\WebApp_Hub\WebApp"
 
@@ -16,11 +16,10 @@ $PhysicalPathToWebSite = "C:\source\WebApp_Hub\WebApp"
 & $PathToAppCmdExe$AppCmdExeName set appPool $AppPoolName /managedRuntimeVersion:$RuntimeVersion
 
 #add site
-& $PathToAppCmdExe$AppCmdExeName add site /name:$SiteName /id:$SiteId /bindings:http/*:$HttpPort: /physicalpath:$PhysicalPathToWebSite
+& $PathToAppCmdExe$AppCmdExeName add site /name:$SiteName /id:$SiteId /bindings:"http://*:51130" /physicalpath:$PhysicalPathToWebSite
 
 #change sites app pool assignment
 & $PathToAppCmdExe$AppCmdExeName set site $SiteName /applicationDefaults.applicationPool:$AppPoolName
-& $PathToAppCmdExe$AppCmdExeName set site $SiteName /+bindings.[protocol='http',bindingInformation='*:51130:']
 
 #start site
 & $PathToAppCmdExe$AppCmdExeName start site /site.name:$SiteName
