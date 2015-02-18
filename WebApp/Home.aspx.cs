@@ -5,10 +5,13 @@ namespace WebApp
 {
     public partial class Home : System.Web.UI.Page
     {
+        private const string SearchBoxErrorMessage = "Please provide a hashtag for searching";
+        private const string ApiErrorMessage = "A problem occurred when searching on Instagram for that hashtag";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Label.Text = "Enter the hashtag you would like to search";
-            Result.ForeColor = System.Drawing.Color.Black;
+            Result.ForeColor = OriginalColor();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -18,8 +21,8 @@ namespace WebApp
             if (string.IsNullOrWhiteSpace(tagname) ||
                 string.IsNullOrEmpty(tagname))
             {
-                Result.ForeColor = System.Drawing.Color.Red;
-                Result.Text = "Please provide a hashtag for searching";
+                Result.ForeColor = WarningColor();
+                Result.Text = SearchBoxErrorMessage;
                 return;
             }
 
@@ -30,9 +33,19 @@ namespace WebApp
             }
             catch (Exception)
             {
-                Result.ForeColor = System.Drawing.Color.Red;
-                Result.Text = "A problem occurred when searching on Instagram for that hashtag";
+                Result.ForeColor = WarningColor();
+                Result.Text = ApiErrorMessage;
             }
+        }
+
+        private static System.Drawing.Color WarningColor()
+        {
+            return System.Drawing.Color.Red;
+        }
+
+        private static System.Drawing.Color OriginalColor()
+        {
+            return System.Drawing.Color.Black;
         }
     }
 }

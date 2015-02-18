@@ -1,4 +1,4 @@
-﻿namespace WebApp.Contract
+﻿namespace WebApp.Contracts
 {
     public class Data
     {

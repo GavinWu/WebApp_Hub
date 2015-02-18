@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using RestSharp;
-using WebApp.Contract;
+using WebApp.Contracts;
 
 namespace WebApp
 {
@@ -19,7 +18,6 @@ namespace WebApp
             var client = CreateClient(InstagramRootUrl);
 
             var uri = string.Format(GetTagnameInfoEndpoint, tagname);
-
             var request = CreateRequest(Method.GET, uri);
 
             request.AddParameter("client_id", ClientId);
@@ -40,5 +38,7 @@ namespace WebApp
         {
             return new RestRequest(endpoint, method);
         }
+
+
     }
 }

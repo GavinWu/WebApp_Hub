@@ -6,6 +6,5 @@ C:\source\WebApp_Hub\WebApp\bin\WebApp.dll
 C:\source\WebApp_Hub\WebApp\bin\WebApp.pdb
 C:\source\WebApp_Hub\WebApp\bin\RestSharp.dll
 C:\source\WebApp_Hub\WebApp\bin\RestSharp.xml
-C:\source\WebApp_Hub\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
 C:\source\WebApp_Hub\WebApp\obj\Debug\WebApp.dll
 C:\source\WebApp_Hub\WebApp\obj\Debug\WebApp.pdb

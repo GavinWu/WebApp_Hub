@@ -64,9 +64,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contract\Data.cs" />
-    <Compile Include="Contract\HashTagSearchResponse.cs" />
-    <Compile Include="Contract\Meta.cs" />
+    <Compile Include="Contracts\Data.cs" />
+    <Compile Include="Contracts\HashTagSearchResponse.cs" />
+    <Compile Include="Contracts\Meta.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
