@@ -10,7 +10,7 @@
 namespace WebApp {
     
     
-    public partial class WebForm1 {
+    public partial class Home {
         
         /// <summary>
         /// form1 control.
@@ -22,21 +22,48 @@ namespace WebApp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Label Label;
         
         /// <summary>
-        /// SubmitButton control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitButton;
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// HashTagSearchInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HashTagSearchInput;
+        
+        /// <summary>
+        /// Button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button;
+        
+        /// <summary>
+        /// Result control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Result;
     }
 }

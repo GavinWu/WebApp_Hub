@@ -1,44 +1,37 @@
 ﻿using System;
+using System.Globalization;
 
 namespace WebApp
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Home : System.Web.UI.Page
     {
-        private string _urlToGetTo;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            //default
-            _urlToGetTo = "http://www.google.ca";
+            Label.Text = "Enter the hashtag you would like to search";
+            Result.ForeColor = System.Drawing.Color.Black;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect(_urlToGetTo);
-        }
+            var tagname = HashTagSearchInput.Text;
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var selectedValue = DropDownList1.SelectedValue;
-            ChangeAddress(selectedValue);
-        }
-
-        private void ChangeAddress(string dropdownChoice)
-        {
-            switch (dropdownChoice)
+            if (string.IsNullOrWhiteSpace(tagname) ||
+                string.IsNullOrEmpty(tagname))
             {
-                case "AppNeta":
-                    _urlToGetTo = "http://www.appneta.com";
-                    break;
-                case "Google":
-                    _urlToGetTo = "http://www.google.ca";
-                    break;
-                case "Weather":
-                    _urlToGetTo = "http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver";
-                    break;
-                case "News":
-                    _urlToGetTo = "http://www.cbc.ca/news";
-                    break;
+                Result.ForeColor = System.Drawing.Color.Red;
+                Result.Text = "Please provide a hashtag for searching";
+                return;
+            }
+
+            try
+            {
+                var mediaCount = HttpRequestClient.GetHashtagCount(tagname);
+                Result.Text = "Hashtag count: " + mediaCount.ToString(CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                Result.ForeColor = System.Drawing.Color.Red;
+                Result.Text = "A problem occurred when searching on Instagram for that hashtag";
             }
         }
     }
