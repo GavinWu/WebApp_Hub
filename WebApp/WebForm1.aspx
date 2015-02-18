@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="height: 181px">
     <form id="form1" runat="server">
     <div>
     
@@ -14,7 +14,16 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Go To AppNeta Home Page" />
+            &nbsp;</p>
+        <asp:DropDownList ID="DropDownList1" runat="server" style="display: block; margin: 0 auto;" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            <asp:ListItem Selected="True">Google</asp:ListItem>
+            <asp:ListItem>AppNeta</asp:ListItem>
+            <asp:ListItem>Weather</asp:ListItem>
+            <asp:ListItem>News</asp:ListItem>
+            <asp:ListItem></asp:ListItem>
+        </asp:DropDownList>
+        <p>
+            <asp:Button ID="SubmitButton" runat="server" OnClick="Button1_Click" Text="Go to site" style="display: block; margin: 0 auto;" />
         </p>
     </form>
 </body>

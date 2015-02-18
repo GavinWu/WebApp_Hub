@@ -2,3 +2,7 @@ C:\Users\Gavin.Wu\Documents\Visual Studio 2012\Projects\WebApp\WebApp\bin\WebApp
 C:\Users\Gavin.Wu\Documents\Visual Studio 2012\Projects\WebApp\WebApp\bin\WebApp.pdb
 C:\Users\Gavin.Wu\Documents\Visual Studio 2012\Projects\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\Gavin.Wu\Documents\Visual Studio 2012\Projects\WebApp\WebApp\obj\Debug\WebApp.pdb
+C:\source\WebApp_Hub\WebApp\bin\WebApp.dll
+C:\source\WebApp_Hub\WebApp\bin\WebApp.pdb
+C:\source\WebApp_Hub\WebApp\obj\Debug\WebApp.dll
+C:\source\WebApp_Hub\WebApp\obj\Debug\WebApp.pdb
