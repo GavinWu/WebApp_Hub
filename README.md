@@ -1,5 +1,5 @@
 # WebApp_Hub
-Allows user to navigate to several different sites
+Shows the number of instagram items with that hash
 
 #### Note
 Problem with .aspx (MIME, ASP.NET)
